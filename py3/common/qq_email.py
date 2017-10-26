@@ -19,10 +19,10 @@ receiver='xxxxx@xxx.com'      # 收件人邮箱账号，我这边发送给自己
 
 def send_email(receiver, content):
     try:
-        msg=MIMEText(content,'plain','utf-8')
-        msg['From']=formataddr(["lily",sender])  #括号里的对应发件人邮箱昵称、发件人邮箱账号
-        msg['To']=formataddr(["lily",receiver])              #括号里的对应收件人邮箱昵称、收件人邮箱账号
-        msg['Subject']="爬取记录"                #邮件的主题，也可以说是标题
+        msg = MIMEText(content,'plain','utf-8')
+        msg['From'] = formataddr(["lily",sender])  #括号里的对应发件人邮箱昵称、发件人邮箱账号
+        msg['To'] = formataddr(["lily",receiver])              #括号里的对应收件人邮箱昵称、收件人邮箱账号
+        msg['Subject'] = "爬取记录"                #邮件的主题，也可以说是标题
 
         server=smtplib.SMTP_SSL("smtp.qq.com", 465)  #发件人邮箱中的SMTP服务器，端口是465
         server.login(sender, passwd)  #括号中对应的是发件人邮箱账号、邮箱密码
